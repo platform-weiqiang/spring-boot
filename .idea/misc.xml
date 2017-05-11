@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/eureka-client-demo/pom.xml" />
         <option value="$PROJECT_DIR$/sentence-ribbon/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-security-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config/pom.xml" />
       </list>
     </option>
   </component>

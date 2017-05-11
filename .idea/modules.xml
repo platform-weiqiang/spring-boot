@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/eurek-aserver-demo/eurek-aserver-demo.iml" filepath="$PROJECT_DIR$/eurek-aserver-demo/eurek-aserver-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-client-demo/eureka-client-demo.iml" filepath="$PROJECT_DIR$/eureka-client-demo/eureka-client-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/sentence-ribbon/sentence-ribbon.iml" filepath="$PROJECT_DIR$/sentence-ribbon/sentence-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-security-demo/springboot-security-demo.iml" filepath="$PROJECT_DIR$/springboot-security-demo/springboot-security-demo.iml" />
     </modules>
   </component>

@@ -1,0 +1,3 @@
+com\shiro\realm\SecondShiroRealm.class
+com\shiro\realm\ShiroRealm.class
+com\shiro\controller\LogonController.class

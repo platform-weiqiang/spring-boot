@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="cacheManager" ref="cacheManager"/>
+        <!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
+        <!--<property name="sessionMode" value="native"/>-->
+        <!--单Realm的配置方式-->
+        <!--<property name="realm" ref="jdbcRealm"/>-->
+
+      <!--  <property name="realms">
+            <list>
+                <ref bean="jdbcRealm"/>
+                <ref bean="secondRealm"/>
+            </list>
+        </property>-->
+        <property name="authenticator" ref="authenticator"></property>
+        <property name="authorizer" ref="authorizer"></property>
+    </bean>
+
+    <!--认证器-->
+    <bean id="authenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+        <property name="realms">
+            <list>
+                <ref bean="jdbcRealm"></ref>
+                <ref bean="secondRealm"></ref>
+            </list>
+        </property>
+        <property name="authenticationStrategy" ref="allSuccessfulStrategy"/>
+    </bean>
+
+    <!--授权器-->
+    <bean id="authorizer" class="org.apache.shiro.authz.ModularRealmAuthorizer">
+        <property name="realms">
+            <list>
+                <ref bean="secondRealm"/>
+                <ref bean="jdbcRealm"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--全部认证通过即通过-->
+    <!--
+    AtLeastOneSuccessfulStrategy :shiro默认即一个成功则成功
+    AllSuccessfulStrategy:全部认证成功即成功
+    -->
+    <bean id="allSuccessfulStrategy" class="org.apache.shiro.authc.pam.AllSuccessfulStrategy"/>
+
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
+    </bean>
+
+    <bean id="jdbcRealm" class="com.shiro.realm.ShiroRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"/><!--MD5,SHA-256-->
+                <property name="hashIterations" value="1024"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="secondRealm" class="com.shiro.realm.SecondShiroRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="SHA1"/><!--MD5,SHA-256-->
+                <property name="hashIterations" value="1024"/>
+            </bean>
+        </property>
+    </bean>
+
+   <!-- <bean id="jdbcRealm" class="org.apache.shiro.samples.spring.realm.SaltAwareJdbcRealm">
+        <property name="name" value="jdbcRealm"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="credentialsMatcher">
+            &lt;!&ndash; The 'bootstrapDataPopulator' Sha256 hashes the password
+                 (using the username as the salt) then base64 encodes it: &ndash;&gt;
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="SHA-256"/>
+                &lt;!&ndash; true means hex encoded, false means base64 encoded &ndash;&gt;
+                <property name="storedCredentialsHexEncoded" value="false"/>
+            </bean>
+        </property>
+    </bean>-->
+
+
+    <!--必须有这样的实例，用来管理spring容器当中的shiro常见的对象-->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--启用shiro的注解-->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!--网络方面-->
+    <bean id="secureRemoteInvocationExecutor" class="org.apache.shiro.spring.remoting.SecureRemoteInvocationExecutor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+
+    <!--配置shiro的过滤器-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/logon.jsp"/>
+        <property name="successUrl" value="/success.jsp"/>
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+       <!--<property name="filters">
+            <map>
+                <entry key="logout" value-ref="logout"/>
+            </map>
+        </property>-->
+        <property name="filterChainDefinitions">
+            <value>
+                /logon.jsp = anon
+                /logout = logout
+                /logon = anon
+                <!--其他的需要认证才能访问-->
+                /admin.jsp = roles[admin]
+                /user.jsp = roles[user]
+                /** = authc
+            </value>
+        </property>
+    </bean>
+</beans>
