@@ -7,19 +7,7 @@
     <option name="SYNC_PROJECT_BEFORE_BUILD" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="525f6568-c78a-417d-b09c-9432834196b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/java/com/shiro/controller/LogonController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/java/com/shiro/realm/ShiroRealm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/resources/applicationContext.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/resources/ehcache.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/resources/spring-mvc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/webapp/logon.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/webapp/success.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-shiro-web/src/main/webapp/unauthorized.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eureka-client-demo/src/main/java/com/eureka/client/EurekaClientDemoApplication.java" afterPath="$PROJECT_DIR$/eureka-client-demo/src/main/java/com/eureka/client/EurekaClientDemoApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eureka-client-demo/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/eureka-client-demo/src/main/resources/application.properties" />
-    </list>
+    <list default="true" id="525f6568-c78a-417d-b09c-9432834196b8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/eurek-aserver-demo/target/" />
     <ignored path="$PROJECT_DIR$/demo01/target/" />
     <ignored path="$PROJECT_DIR$/eureka-client-demo/target/" />
@@ -250,14 +238,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-shiro-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -820,6 +808,7 @@
       <workItem from="1493747977961" duration="1895000" />
       <workItem from="1493823775957" duration="580000" />
       <workItem from="1494090441818" duration="155000" />
+      <workItem from="1494514346293" duration="713000" />
     </task>
     <task id="LOCAL-00001" summary="update model">
       <created>1493634451736</created>
@@ -837,7 +826,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59203000" />
+    <option name="totallyTimeSpent" value="59916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,7 +861,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14668219" sideWeight="0.49059233" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28754365" sideWeight="0.49303252" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2050592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20828848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
